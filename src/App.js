@@ -15,7 +15,7 @@ function App() {
   };
   return (
     <div className="App">
-      <img src={logo} alt="Clarusway" rel="noreferrer" />
+      <img src={logo} alt="Clarusway" />
       <h1>Clarusway News App</h1>
       <div>
         <label>Search:</label>
@@ -36,7 +36,7 @@ function App() {
             news.map((item) => {
               return (
                 <li key={item.objectID}>
-                  <a href={item.url} target="_blank">
+                  <a href={item.url} target="_blank" rel="noreferrer" >
                     {item.title}
                   </a>
                 </li>
