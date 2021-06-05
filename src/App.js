@@ -11,7 +11,7 @@ function App() {
 
   const getNews = async () => {
     const response = await axios.get(url);
-    setNews(response.data.hits);
+    setNews(response?.data?.hits);
   };
   return (
     <div className="App">
@@ -35,9 +35,9 @@ function App() {
           {news ? (
             news.map((item) => {
               return (
-                <li key={item.objectID}>
+                <li key={item?.objectID}>
                   <a href={item.url} target="_blank" rel="noreferrer" >
-                    {item.title}
+                    {item?.title}
                   </a>
                 </li>
               );
