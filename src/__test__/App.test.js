@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import App from "../App";
+import userEvent from "@testing-library/user-event";
 
 beforeEach(() => {
   render(<App />);
@@ -32,4 +33,15 @@ test("search text and button text should be in app", () => {
 test("input contains initial value", () => {
   const inputElement = screen.getByTestId("input");
   expect(inputElement).toHaveValue("");
+});
+
+test("test input change", () => {
+  const inputElement = screen.getByTestId("input");
+  expect(inputElement).toHaveValue("");
+  userEvent.type(inputElement,"")
+})
+
+test("should display a text before loading data", () => {
+  const loading = screen.getByTestId("loading");
+  expect(loading).toBeInTheDocument("No news....");
 });
